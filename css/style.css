@@ -1,0 +1,154 @@
+ @font-face {
+  font-family: "Grotesk";
+  src: url(/Site/assets/Grotesk.otf);
+}
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*------Main styles-----*/
+body {
+  font-family: "Grotesk", helvetica;
+  font-size: 24px;
+  line-height: 1.25;
+  color: #000;
+  height: 100vh;
+  background-color: #7CFFCB;
+  background-image: linear-gradient(180deg, #fcf0f0, rgba(255, 255, 255, 0.2));
+  transition: background-color 0.5s;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 6.5vmin;
+}
+
+section { 
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  text-align: center;
+  padding: 20px;
+  text-shadow: 
+    1px 1px 1px rgba(0, 0, 0, 0.1),
+    2px 2px 1px rgba(0, 0, 0, 0.1),
+    3px 3px 1px rgba(0, 0, 0, 0.1),
+    4px 4px 1px rgba(0, 0, 0, 0.1);
+  /* background: rgba(255, 255, 255, 0.1); */
+  /* box-shadow: 3px 2px 14px 2px rgba(0, 0, 0, 0.1); */
+}
+
+section div.circle {
+  width: 20px;
+  height: 20px;
+  background-color: #9708CC;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 10px;
+  box-shadow: 3px 2px 8px 1px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: background-color 0.5s;
+}
+
+section a {
+  color: #000;
+}
+
+i {
+  transition: transform 250ms ease-in-out;
+}
+
+i:hover {
+  transform: scale(1.2);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer img {
+  margin: 0 10px;
+  padding: 10px;
+  box-shadow: 3px 1px 6px 3px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+footer img:first-child {
+  transform: perspective(400px) rotateY(45deg);
+  transition: transform 0.3s;
+}
+
+footer img:last-child {
+  transform: perspective(400px) rotateY(-45deg);
+  transition: transform 0.3s;
+}
+
+footer img:hover {
+  transform: rotateY(0deg);
+}
+
+/*------circle animations-----*/
+.circle, .circle1, .circle2, .circle3, .circle4 {
+  animation-name: hover;
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
+}
+
+.circle1 {
+  animation-delay: 500ms; 
+}
+.circle2 {
+  animation-delay: 1000ms; 
+}
+.circle3 {
+  animation-delay: 1500ms; 
+}
+.circle4 {
+  animation-delay: 1750ms; 
+}
+
+@keyframes hover {
+  0% {
+    top: 0px;
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    opacity: 0;
+  }
+}
+
+
+/* icon classes controlled by js*/
+
+.icons {
+  display: none;
+}
+
+.social_icons {
+  text-decoration: none;
+  margin: 5px;
+}
+
+.social_icons:link, .social_icons:visited { 
+  color: black;
+}
